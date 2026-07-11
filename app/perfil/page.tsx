@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
 import { AuthGate } from '@/components/auth-gate'
 import { ProfileView } from '@/components/profile-view'
-import { SiteFooter } from '@/components/site-footer'
 import { SiteHeader } from '@/components/site-header'
 
 export const metadata: Metadata = {
@@ -14,12 +13,11 @@ export default function ProfilePage() {
   return (
     <>
       <SiteHeader />
-      <main className="mx-auto max-w-5xl px-4 pb-20 pt-24 md:px-6 md:pt-28">
+      <main className="min-h-screen pt-16">
         <AuthGate title="Entre para ver seu perfil">
           <ProfileView />
         </AuthGate>
       </main>
-      <SiteFooter />
     </>
   )
 }

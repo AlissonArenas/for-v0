@@ -22,14 +22,45 @@ export interface AuthUser {
   joinedAt: number
 }
 
-/** Nível calculado a partir dos capítulos lidos (a cada 50 capítulos = 1 nível). */
-export function getLevel(chaptersRead: number): number {
-  return Math.floor(chaptersRead / 50) + 1
+const XP_PER_CHAPTER = 75
+const XP_PER_LEVEL = 5000
+
+export function getTotalXP(chaptersRead: number): number {
+  return chaptersRead * XP_PER_CHAPTER
 }
 
-/** Progresso (0 a 1) dentro do nível atual. */
+export function getLevel(chaptersRead: number): number {
+  return Math.floor(getTotalXP(chaptersRead) / XP_PER_LEVEL) + 1
+}
+
+export function getLevelXP(chaptersRead: number): number {
+  return getTotalXP(chaptersRead) % XP_PER_LEVEL
+}
+
 export function getLevelProgress(chaptersRead: number): number {
-  return (chaptersRead % 50) / 50
+  return getLevelXP(chaptersRead) / XP_PER_LEVEL
+}
+
+export interface Rank { name: string; color: string }
+
+const RANKS: Rank[] = [
+  { name: 'Bronze I', color: '#cd7f32' },
+  { name: 'Bronze II', color: '#cd7f32' },
+  { name: 'Prata I', color: '#a8a9ad' },
+  { name: 'Prata II', color: '#a8a9ad' },
+  { name: 'Ouro I', color: '#ffd700' },
+  { name: 'Ouro II', color: '#ffd700' },
+  { name: 'Platina I', color: '#00d4aa' },
+  { name: 'Platina II', color: '#00d4aa' },
+  { name: 'Diamante I', color: '#a855f7' },
+  { name: 'Diamante II', color: '#a855f7' },
+  { name: 'Mestre', color: '#ef4444' },
+]
+
+export function getRank(chaptersRead: number): Rank {
+  const level = getLevel(chaptersRead)
+  const idx = Math.min(Math.floor((level - 1) / 3), RANKS.length - 1)
+  return RANKS[idx]
 }
 
 interface AuthContextValue {

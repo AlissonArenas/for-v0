@@ -1,5 +1,15 @@
-⨯ Failed to start server
-Error: listen EADDRINUSE: address already in use :::3000
-    at <unknown> (Error: listen EADDRINUSE: address already in use : GET / 200 in 1353ms (next.js: 383ms, application-code: 970ms)
- GET /perfil 200 in 1302ms (next.js: 1054ms, application-code: 247ms)
- GET /perfil 200 in 149ms (next.js: 6ms, application-code: 143ms)
+▲ Next.js 16.2.6 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://169.254.8.1:3000
+- Environments: .env
+✓ Ready in 823ms
+Attention: Next.js now collects completely anonymous telemetry regarding usage.
+This information is used to shape Next.js' roadmap and prioritize features.
+You can learn more, including how to opt-out if you'd not like to participate in this anonymous program, by visiting the following URL:
+https://nextjs.org/telemetry
+
+
+○ Compiling / ...
+ GET / 200 in 2.7s (next.js: 1599ms, application-code: 1074ms)
+ GET / 200 in 1216ms (next.js: 600ms, application-code: 616ms)
+ GET /perfil 200 in 1202ms (next.js: 942ms, application-code: 260ms)

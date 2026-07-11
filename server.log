@@ -1,9 +1,5 @@
-▲ Next.js 16.2.6 (Turbopack)
-- Local:         http://localhost:3000
-- Network:       http://169.254.8.1:3000
-- Environments: .env
-✓ Ready in 888ms
-
-○ Compiling / ...
- GET / 200 in 646ms (next.js: 6ms, application-code: 639ms)
- GET /perfil 200 in 1163ms (next.js: 926ms, application-code: 237ms)
+⨯ Failed to start server
+Error: listen EADDRINUSE: address already in use :::3000
+    at <unknown> (Error: listen EADDRINUSE: address already in use : GET / 200 in 1353ms (next.js: 383ms, application-code: 970ms)
+ GET /perfil 200 in 1302ms (next.js: 1054ms, application-code: 247ms)
+ GET /perfil 200 in 149ms (next.js: 6ms, application-code: 143ms)
